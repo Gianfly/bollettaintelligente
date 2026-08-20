@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calcolo Consumo Climatizzatore | Bolletta Intelligente</title>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f5f7fa;
+    margin:0;
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+    padding:40px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(0,0,0,0.1);
+}
+
+h1{
+    color:#005bea;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-top:5px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+button{
+    margin-top:20px;
+    background:#005bea;
+    color:white;
+    border:none;
+    padding:15px 25px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.result{
+    margin-top:25px;
+    padding:20px;
+    background:#eef6ff;
+    border-radius:10px;
+    font-size:18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>Calcolo Consumo Climatizzatore</h1>
+
+<p>
+Scopri quanto costa utilizzare il tuo condizionatore.
+</p>
+
+<label>Potenza climatizzatore (kW)</label>
+<input type="number" id="kw" value="1">
+
+<label>Ore utilizzo al giorno</label>
+<input type="number" id="ore" value="8">
+
+<label>Giorni utilizzo al mese</label>
+<input type="number" id="giorni" value="30">
+
+<label>Costo energia (€ per kWh)</label>
+<input type="number" id="prezzo" value="0.30" step="0.01">
+
+<button onclick="calcola()">
+Calcola
+</button>
+
+<div class="result" id="risultato">
+Inserisci i dati e premi Calcola.
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function calcola(){
+
+let kw = parseFloat(document.getElementById('kw').value);
+let ore = parseFloat(document.getElementById('ore').value);
+let giorni = parseFloat(document.getElementById('giorni').value);
+let prezzo = parseFloat(document.getElementById('prezzo').value);
+
+let consumo = kw * ore * giorni;
+let costo = consumo * prezzo;
+
+document.getElementById("risultato").innerHTML =
+"<b>Consumo mensile:</b> " +
+consumo.toFixed(1) +
+" kWh<br><br>" +
+"<b>Costo mensile stimato:</b> € " +
+costo.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>
