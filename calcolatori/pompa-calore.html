@@ -133,16 +133,20 @@ let nuovaSpesa = gas * (1 - eff/100);
 let risparmio = gas - nuovaSpesa;
 
 document.getElementById("risultato").innerHTML =
+
 "<b>Spesa attuale:</b> € " +
 gas.toFixed(0) +
+
 "<br><br>" +
 
 "<b>Spesa stimata con pompa di calore:</b> € " +
 nuovaSpesa.toFixed(0) +
+
 "<br><br>" +
 
 "<b>Risparmio annuo stimato:</b> € " +
 risparmio.toFixed(0);
+
 }
 
 </script>
