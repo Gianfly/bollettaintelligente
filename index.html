@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Bolletta Intelligente</title>
 
 <style>
@@ -13,206 +11,159 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Segoe UI,Arial,sans-serif;
+font-family:Inter, Arial, sans-serif;
 }
 
 body{
-background:#0f172a;
+background:#0b1120;
 color:white;
 }
 
 .hero{
-height:100vh;
-background:
-linear-gradient(rgba(15,23,42,0.75),rgba(15,23,42,0.95)),
-url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1600');
-background-size:cover;
-background-position:center;
-display:flex;
-justify-content:center;
-align-items:center;
+max-width:1000px;
+margin:auto;
+padding:90px 20px 50px;
 text-align:center;
-padding:20px;
-}
-
-.hero-content{
-max-width:800px;
 }
 
 .hero h1{
-font-size:64px;
+font-size:58px;
 margin-bottom:20px;
 }
 
 .hero p{
-font-size:24px;
-color:#cbd5e1;
-margin-bottom:30px;
+font-size:22px;
+color:#94a3b8;
+max-width:700px;
+margin:auto;
+line-height:1.5;
 }
 
-.btn{
+.button{
 display:inline-block;
-padding:18px 35px;
-background:#38bdf8;
+margin-top:35px;
+padding:16px 28px;
+background:#06b6d4;
 color:white;
 text-decoration:none;
-border-radius:14px;
+border-radius:12px;
 font-weight:bold;
 font-size:18px;
-transition:0.3s;
 }
 
-.btn:hover{
-background:#0ea5e9;
+.button:hover{
+background:#0891b2;
 }
 
 .section{
-max-width:1200px;
+max-width:1000px;
 margin:auto;
-padding:80px 20px;
+padding:30px 20px 80px;
 }
 
-.section h2{
-font-size:40px;
-text-align:center;
-margin-bottom:50px;
-}
-
-.stats{
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+grid-template-columns:repeat(2,1fr);
 gap:20px;
-margin-bottom:70px;
-}
-
-.stat{
-background:rgba(255,255,255,0.05);
-padding:25px;
-border-radius:15px;
-text-align:center;
-backdrop-filter:blur(10px);
-}
-
-.stat strong{
-display:block;
-font-size:32px;
-color:#38bdf8;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
 }
 
 .card{
-background:rgba(255,255,255,0.05);
+background:#111827;
+border:1px solid #1f2937;
+border-radius:16px;
 padding:25px;
-border-radius:20px;
-backdrop-filter:blur(12px);
-transition:0.3s;
 text-decoration:none;
 color:white;
-display:block;
+transition:0.25s;
 }
 
 .card:hover{
-transform:translateY(-8px);
-border:1px solid #38bdf8;
+transform:translateY(-4px);
+border-color:#06b6d4;
 }
 
 .card h3{
-margin-bottom:12px;
-font-size:24px;
+font-size:22px;
+margin-bottom:10px;
 }
 
 .card p{
-color:#cbd5e1;
-}
-
-footer{
-padding:40px;
-text-align:center;
 color:#94a3b8;
 }
 
-</style>
+.footer{
+text-align:center;
+padding:40px;
+color:#64748b;
+}
 
+@media(max-width:768px){
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
 <section class="hero">
 
-<div class="hero-content">
-
 <h1>⚡ Bolletta Intelligente</h1>
 
 <p>
-Scopri quanto puoi risparmiare su energia,
-climatizzazione e consumi domestici in meno di 30 secondi.
+Scopri quanto spendono davvero climatizzatore,
+fotovoltaico e pompa di calore.
+Calcoli semplici, immediati e gratuiti.
 </p>
 
-<a class="btn" href="calcolatoriINIZIA IL CALCOLO
+<a class="button" href="calcolatorizia il calcolo
 </a>
-
-</div>
 
 </section>
 
 <section class="section">
 
-<div class="stats">
+<div class="grid">
 
-<div class="stat">
-<strong>€ 15.000+</strong>
-Risparmio stimato
-</div>
-
-<div class="stat">
-<strong>1200+</strong>
-Simulazioni
-</div>
-
-<div class="stat">
-<strong>350+</strong>
-Utenti
-</div>
-
-</div>
-
-<h2>I nostri strumenti</h2>
-
-<div class="cards">
-
-<a class="card" href="calcolatorih3>🔋 Consumo Climatizzatore</h3>
+calcolatori/climatizzatore.html
+<h3>🔋 Consumo Climatizzatore</h3>
 <p>Calcola il costo reale del tuo condizionatore.</p>
 </a>
 
 <div class="card">
 <h3>☀️ Fotovoltaico</h3>
-<p>In arrivo.</p>
+<p>Prossimamente disponibile.</p>
 </div>
 
 <div class="card">
 <h3>🔥 Pompa di Calore</h3>
-<p>In arrivo.</p>
+<p>Prossimamente disponibile.</p>
 </div>
 
 <div class="card">
 <h3>📄 Analisi Bolletta</h3>
-<p>In arrivo.</p>
+<p>Prossimamente disponibile.</p>
 </div>
 
 </div>
 
 </section>
 
-<footer>
-
+<div class="footer">
 © 2026 Bolletta Intelligente
-
-</footer>
+</div>
 
 </body>
 </html>
