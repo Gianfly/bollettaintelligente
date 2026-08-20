@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Bolletta Intelligente</title>
 
 <style>
@@ -11,100 +13,167 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Inter, Arial, sans-serif;
+font-family:Arial,sans-serif;
 }
 
 body{
-background:#0b1120;
-color:white;
+background:#f4f8fc;
+color:#1f2937;
+}
+
+nav{
+background:white;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 15px rgba(0,0,0,0.08);
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#0f172a;
+}
+
+.menu a{
+text-decoration:none;
+color:#475569;
+margin-left:25px;
+font-weight:600;
 }
 
 .hero{
-max-width:1000px;
+max-width:1200px;
 margin:auto;
-padding:90px 20px 50px;
-text-align:center;
+padding:80px 8%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:60px;
 }
 
-.hero h1{
+.hero-text{
+flex:1;
+}
+
+.hero-text h1{
 font-size:58px;
+line-height:1.1;
 margin-bottom:20px;
 }
 
-.hero p{
+.hero-text p{
 font-size:22px;
-color:#94a3b8;
-max-width:700px;
-margin:auto;
+color:#64748b;
+margin-bottom:30px;
 line-height:1.5;
 }
 
-.button{
+.btn{
 display:inline-block;
-margin-top:35px;
-padding:16px 28px;
-background:#06b6d4;
+padding:18px 30px;
+background:#0ea5e9;
 color:white;
 text-decoration:none;
 border-radius:12px;
-font-weight:bold;
 font-size:18px;
+font-weight:700;
 }
 
-.button:hover{
-background:#0891b2;
+.btn:hover{
+background:#0284c7;
 }
 
-.section{
-max-width:1000px;
+.hero-image{
+flex:1;
+}
+
+.hero-image img{
+width:100%;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+.tools{
+max-width:1200px;
 margin:auto;
-padding:30px 20px 80px;
+padding:40px 8% 80px;
+}
+
+.tools h2{
+text-align:center;
+margin-bottom:40px;
+font-size:36px;
 }
 
 .grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:20px;
+gap:25px;
 }
 
 .card{
-background:#111827;
-border:1px solid #1f2937;
-border-radius:16px;
-padding:25px;
+background:white;
+border-radius:20px;
+padding:30px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
 text-decoration:none;
-color:white;
-transition:0.25s;
+color:#1f2937;
+transition:.2s;
 }
 
 .card:hover{
-transform:translateY(-4px);
-border-color:#06b6d4;
+transform:translateY(-5px);
 }
 
 .card h3{
-font-size:22px;
 margin-bottom:10px;
+font-size:24px;
 }
 
 .card p{
-color:#94a3b8;
-}
-
-.footer{
-text-align:center;
-padding:40px;
 color:#64748b;
 }
 
-@media(max-width:768px){
-
-.hero h1{
-font-size:42px;
+.advantages{
+background:white;
+padding:60px 8%;
+margin-top:40px;
 }
 
-.hero p{
-font-size:18px;
+.advantages h2{
+text-align:center;
+margin-bottom:40px;
+}
+
+.features{
+display:flex;
+justify-content:center;
+gap:50px;
+flex-wrap:wrap;
+}
+
+.feature{
+font-size:20px;
+font-weight:600;
+}
+
+footer{
+padding:40px;
+text-align:center;
+color:#64748b;
+}
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-text h1{
+font-size:42px;
 }
 
 .grid{
@@ -118,22 +187,44 @@ grid-template-columns:1fr;
 
 <body>
 
+<nav>
+
+<div class="logo">
+⚡ Bolletta Intelligente
+</div>
+
+<div class="menu">
+#Home</a>
+<a hrefatori</a>
+<a href/a>
+</div>
+
+</nav>
+
 <section class="hero">
 
-<h1>⚡ Bolletta Intelligente</h1>
+<div class="hero-text">
+
+<h1>
+Risparmia sulla tua bolletta energetica
+</h1>
 
 <p>
-Scopri quanto spendono davvero climatizzatore,
-fotovoltaico e pompa di calore.
-Calcoli semplici, immediati e gratuiti.
+Scopri in pochi secondi quanto spendono davvero
+climatizzatori, pompe di calore e impianti fotovoltaici.
 </p>
 
-<a class="button" href="calcolatorizia il calcolo
+calcolatori/climatizzatore.html
+Inizia il calcolo
 </a>
 
-</section>
+</div>
 
-<section class="section">
+<div class="hero-image">
+
+<img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200" alt="Casa efficiente con energia>
+
+<h2>I nostri strumenti</h2>
 
 <div class="grid">
 
@@ -161,9 +252,29 @@ calcolatori/climatizzatore.html
 
 </section>
 
-<div class="footer">
-© 2026 Bolletta Intelligente
+<section class="advantages">
+
+<h2>Perché usare Bolletta Intelligente</h2>
+
+<div class="features">
+
+<div class="feature">✅ Gratuito</div>
+
+<div class="feature">✅ Nessuna registrazione</div>
+
+<div class="feature">✅ Risultato immediato</div>
+
+<div class="feature">✅ Facile da usare</div>
+
 </div>
+
+</section>
+
+<footer>
+
+© 2026 Bolletta Intelligente
+
+</footer>
 
 </body>
 </html>
