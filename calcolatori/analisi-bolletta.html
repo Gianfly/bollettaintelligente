@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Analisi Bolletta | Bolletta Intelligente
+</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f5f7fa;
+    margin:0;
+    color:#0f172a;
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+    padding:40px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(0,0,0,0.1);
+}
+
+h1{
+    color:#005bea;
+    margin-top:0;
+}
+
+p{
+    color:#64748b;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-top:5px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+button{
+    margin-top:20px;
+    width:100%;
+    background:#005bea;
+    color:white;
+    border:none;
+    padding:15px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#0047c7;
+}
+
+.result{
+    margin-top:25px;
+    padding:20px;
+    background:#eef6ff;
+    border-radius:10px;
+    font-size:18px;
+    line-height:1.5;
+}
+
+.home-btn{
+    background:#0ea5e9;
+}
+
+.home-btn:hover{
+    background:#0284c7;
+}
+
+.note{
+    margin-top:18px;
+    font-size:13px;
+    color:#64748b;
+    line-height:1.45;
+}
+
+@media(max-width:600px){
+
+    .container{
+        padding:18px;
+    }
+
+    .card{
+        padding:22px;
+    }
+
+    h1{
+        font-size:27px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>
+📄 Analisi Bolletta
+</h1>
+
+<p>
+Inserisci consumo e spesa annui per calcolare
+il costo medio effettivo per kWh.
+</p>
+
+<label for="consumo">
+Consumo annuo (kWh)
+</label>
+
+<input
+type="number"
+id="consumo"
+value="3000"
+min="1"
+step="1">
+
+<label for="spesa">
+Spesa annua totale (€)
+</label>
+
+<input
+type="number"
+id="spesa"
+value="900"
+min="0.01"
+step="0.01">
+
+<button
+type="button"
+onclick="calcola()">
+
+Analizza Bolletta
+
+</button>
+
+<div
+class="result"
+id="risultato"
+aria-live="polite">
+
+Inserisci i dati e premi Analizza Bolletta.
+
+</div>
+
+<button
+type="button"
+class="home-btn"
+onclick="window.location.href='../index.html'">
+
+🏠 Torna alla homepage
+
+</button>
+
+<p class="note">
+Il risultato è una stima matematica basata sui dati
+inseriti. La spesa totale può includere quote fisse,
+imposte e altre componenti.
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function euro(valore){
+
+    return new Intl.NumberFormat(
+        'it-IT',
+        {
+            style:'currency',
+            currency:'EUR'
+        }
+    ).format(valore);
+}
+
+function calcola(){
+
+    const consumo =
+    parseFloat(
+        document.getElementById('consumo').value
+    );
+
+    const spesa =
+    parseFloat(
+        document.getElementById('spesa').value
+    );
+
+    const risultato =
+    document.getElementById('risultato');
+
+    if(
+        !Number.isFinite(consumo) ||
+        !Number.isFinite(spesa) ||
+        consumo <= 0 ||
+        spesa <= 0
+    ){
+
+        risultato.innerHTML =
+        '<b>Controlla i dati:</b> ' +
+        'inserisci valori maggiori di zero.';
+
+        return;
+    }
+
+    const costoMedio =
+    spesa / consumo;
+
+    const costoMensile =
+    spesa / 12;
+
+    risultato.innerHTML =
+
+    '<b>Costo medio complessivo:</b> ' +
+
+    costoMedio
+    .toFixed(3)
+    .replace('.', ',') +
+
+    ' €/kWh' +
+
+    '<br><br>' +
+
+    '<b>Spesa media mensile:</b> ' +
+
+    euro(costoMensile) +
+
+    '<br><br>' +
+
+    '<b>Consumo annuo dichiarato:</b> ' +
+
+    consumo.toLocaleString('it-IT') +
+
+    ' kWh';
+}
+
+</script>
+
+</body>
+</html>
