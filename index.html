@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Bolletta Intelligente</title>
 
 <style>
@@ -13,101 +11,72 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:Arial, sans-serif;
 }
 
 body{
-background:#f4f8fc;
-color:#1f2937;
-}
-
-nav{
-background:white;
-padding:18px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 2px 15px rgba(0,0,0,0.08);
-}
-
-.logo{
-font-size:28px;
-font-weight:700;
+background:#f8fafc;
 color:#0f172a;
 }
 
-.menu a{
-text-decoration:none;
-color:#475569;
-margin-left:25px;
-font-weight:600;
+header{
+background:white;
+padding:20px 8%;
+border-bottom:1px solid #e2e8f0;
+}
+
+.logo{
+font-size:32px;
+font-weight:bold;
 }
 
 .hero{
 max-width:1200px;
 margin:auto;
 padding:80px 8%;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:60px;
+text-align:center;
 }
 
-.hero-text{
-flex:1;
-}
-
-.hero-text h1{
-font-size:58px;
-line-height:1.1;
+.hero h1{
+font-size:52px;
 margin-bottom:20px;
 }
 
-.hero-text p{
+.hero p{
 font-size:22px;
 color:#64748b;
-margin-bottom:30px;
+max-width:800px;
+margin:auto;
 line-height:1.5;
 }
 
-.btn{
+.pulsante{
 display:inline-block;
-padding:18px 30px;
+margin-top:30px;
 background:#0ea5e9;
 color:white;
-text-decoration:none;
+padding:18px 35px;
 border-radius:12px;
-font-size:18px;
-font-weight:700;
+font-weight:bold;
+text-decoration:none;
 }
 
-.btn:hover{
+.pulsante:hover{
 background:#0284c7;
 }
 
-.hero-image{
-flex:1;
-}
-
-.hero-image img{
-width:100%;
-border-radius:25px;
-box-shadow:0 15px 40px rgba(0,0,0,0.15);
-}
-
-.tools{
+.sezione{
 max-width:1200px;
 margin:auto;
-padding:40px 8% 80px;
+padding:20px 8% 80px;
 }
 
-.tools h2{
+.sezione h2{
 text-align:center;
 margin-bottom:40px;
-font-size:36px;
 }
 
-.grid{
+.griglia{
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:25px;
@@ -115,12 +84,11 @@ gap:25px;
 
 .card{
 background:white;
-border-radius:20px;
 padding:30px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
-text-decoration:none;
-color:#1f2937;
-transition:.2s;
+border-radius:18px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+cursor:pointer;
+transition:0.2s;
 }
 
 .card:hover{
@@ -129,54 +97,29 @@ transform:translateY(-5px);
 
 .card h3{
 margin-bottom:10px;
-font-size:24px;
 }
 
 .card p{
 color:#64748b;
 }
 
-.advantages{
-background:white;
-padding:60px 8%;
-margin-top:40px;
-}
-
-.advantages h2{
-text-align:center;
-margin-bottom:40px;
-}
-
-.features{
-display:flex;
-justify-content:center;
-gap:50px;
-flex-wrap:wrap;
-}
-
-.feature{
-font-size:20px;
-font-weight:600;
-}
-
 footer{
-padding:40px;
 text-align:center;
+padding:40px;
 color:#64748b;
 }
 
-@media(max-width:900px){
+@media(max-width:768px){
 
-.hero{
-flex-direction:column;
-text-align:center;
+.hero h1{
+font-size:38px;
 }
 
-.hero-text h1{
-font-size:42px;
+.hero p{
+font-size:18px;
 }
 
-.grid{
+.griglia{
 grid-template-columns:1fr;
 }
 
@@ -187,51 +130,40 @@ grid-template-columns:1fr;
 
 <body>
 
-<nav>
+<header>
 
 <div class="logo">
 ⚡ Bolletta Intelligente
 </div>
 
-<div class="menu">
-#Home</a>
-<a hrefatori</a>
-<a href/a>
-</div>
-
-</nav>
+</header>
 
 <section class="hero">
-
-<div class="hero-text">
 
 <h1>
 Risparmia sulla tua bolletta energetica
 </h1>
 
 <p>
-Scopri in pochi secondi quanto spendono davvero
-climatizzatori, pompe di calore e impianti fotovoltaici.
+Scopri quanto spendono davvero climatizzatori,
+fotovoltaico e pompe di calore.
+Calcoli semplici e gratuiti.
 </p>
 
-calcolatori/climatizzatore.html
-Inizia il calcolo
+<a classori/climatizzatore.html
+Calcola Ora
 </a>
 
-</div>
+</section>
 
-<div class="hero-image">
-
-<img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200" alt="Casa efficiente con energia>
+<section class="sezione">
 
 <h2>I nostri strumenti</h2>
 
-<div class="grid">
+<div class="griglia">
 
-<a hreftori/climatizzatore.html
 <div class="card"
-onclick="location.href='calcolatori/climatizzatore.html'"
-style="cursor:pointer;">
+onclick="location.href='calcolatori/climatizzatore.html'">
 
 <h3>🔋 Consumo Climatizzatore</h3>
 
@@ -241,39 +173,35 @@ Calcola il costo reale del tuo condizionatore.
 
 </div>
 
-
 <div class="card">
+
 <h3>☀️ Fotovoltaico</h3>
-<p>Prossimamente disponibile.</p>
+
+<p>
+Prossimamente disponibile.
+</p>
+
 </div>
 
 <div class="card">
+
 <h3>🔥 Pompa di Calore</h3>
-<p>Prossimamente disponibile.</p>
+
+<p>
+Prossimamente disponibile.
+</p>
+
 </div>
 
 <div class="card">
+
 <h3>📄 Analisi Bolletta</h3>
-<p>Prossimamente disponibile.</p>
-</div>
+
+<p>
+Prossimamente disponibile.
+</p>
 
 </div>
-
-</section>
-
-<section class="advantages">
-
-<h2>Perché usare Bolletta Intelligente</h2>
-
-<div class="features">
-
-<div class="feature">✅ Gratuito</div>
-
-<div class="feature">✅ Nessuna registrazione</div>
-
-<div class="feature">✅ Risultato immediato</div>
-
-<div class="feature">✅ Facile da usare</div>
 
 </div>
 
