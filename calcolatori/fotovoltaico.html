@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calcolatore Fotovoltaico - Bolletta Intelligente</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f8fafc;
+color:#0f172a;
+}
+
+.container{
+max-width:800px;
+margin:50px auto;
+padding:30px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:18px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+h1{
+margin-bottom:15px;
+}
+
+p{
+color:#64748b;
+margin-bottom:25px;
+}
+
+label{
+display:block;
+margin-top:15px;
+font-weight:bold;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:8px;
+border:1px solid #cbd5e1;
+border-radius:10px;
+}
+
+button{
+margin-top:25px;
+width:100%;
+padding:16px;
+background:#0ea5e9;
+color:white;
+border:none;
+border-radius:10px;
+font-size:18px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0284c7;
+}
+
+.risultato{
+margin-top:30px;
+padding:20px;
+background:#ecfeff;
+border-radius:12px;
+display:none;
+}
+
+a{
+display:inline-block;
+margin-top:25px;
+text-decoration:none;
+color:#0ea5e9;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>☀️ Calcolatore Fotovoltaico</h1>
+
+<p>
+Inserisci i tuoi consumi e scopri il potenziale risparmio del fotovoltaico.
+</p>
+
+<label>Consumo annuo (kWh)</label>
+<input type="number" id="consumo" value="3000">
+
+<label>Costo energia (€ per kWh)</label>
+<input type="number" id="costo" value="0.30" step="0.01">
+
+<button onclick="calcola()">
+Calcola Risparmio
+</button>
+
+<div class="risultato" id="risultato"></div>
+
+../index.html
+← Torna alla homepage
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+function calcola(){
+
+let consumo =
+parseFloat(document.getElementById("consumo").value);
+
+let costo =
+parseFloat(document.getElementById("costo").value);
+
+let impianto =
+(consumo / 1200).toFixed(1);
+
+let produzione =
+(impianto * 1200).toFixed(0);
+
+let risparmio =
+(produzione * costo * 0.75).toFixed(0);
+
+let rientro =
+(impianto * 1800 / risparmio).toFixed(1);
+
+document.getElementById("risultato").style.display="block";
+
+document.getElementById("risultato").innerHTML =
+
+"<h3>Risultato</h3><br>" +
+
+"<b>Potenza consigliata:</b> " +
+impianto +
+" kWp<br><br>" +
+
+"<b>Produzione annua stimata:</b> " +
+produzione +
+" kWh<br><br>" +
+
+"<b>Risparmio annuo stimato:</b> € " +
+risparmio +
+"<br><br>" +
+
+"<b>Tempo di rientro indicativo:</b> " +
+rientro +
+" anni";
+
+}
+
+</script>
+
+</body>
+</html>
