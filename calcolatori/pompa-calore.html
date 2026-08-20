@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pompa di Calore | Bolletta Intelligente</title>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f5f7fa;
+    margin:0;
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+    padding:40px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(0,0,0,0.1);
+}
+
+h1{
+    color:#005bea;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-top:5px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+button{
+    margin-top:20px;
+    background:#005bea;
+    color:white;
+    border:none;
+    padding:15px 25px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0047c7;
+}
+
+.result{
+    margin-top:25px;
+    padding:20px;
+    background:#eef6ff;
+    border-radius:10px;
+    font-size:18px;
+}
+
+.home-btn{
+    display:block;
+    margin:25px auto 0 auto;
+    width:240px;
+    text-align:center;
+    padding:14px;
+    background:#0ea5e9;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.home-btn:hover{
+    background:#0284c7;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>🔥 Calcolatore Pompa di Calore</h1>
+
+<p>
+Confronta il costo attuale del gas con una pompa di calore.
+</p>
+
+<label>Spesa annua gas (€)</label>
+<input type="number" id="gas" value="1200">
+
+<label>Efficienza stimata pompa di calore (%)</label>
+<input type="number" id="eff" value="40">
+
+<button onclick="calcola()">
+Calcola Risparmio
+</button>
+
+<div class="result" id="risultato">
+Inserisci i dati e premi Calcola.
+</div>
+
+../index.html
+🏠 Torna alla homepage
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+function calcola(){
+
+let gas = parseFloat(document.getElementById('gas').value);
+let eff = parseFloat(document.getElementById('eff').value);
+
+let nuovaSpesa = gas * (1 - eff/100);
+let risparmio = gas - nuovaSpesa;
+
+document.getElementById("risultato").innerHTML =
+"<b>Spesa attuale:</b> € " +
+gas.toFixed(0) +
+"<br><br>" +
+
+"<b>Spesa stimata con pompa di calore:</b> € " +
+nuovaSpesa.toFixed(0) +
+"<br><br>" +
+
+"<b>Risparmio annuo stimato:</b> € " +
+risparmio.toFixed(0);
+}
+
+</script>
+
+</body>
+</html>
