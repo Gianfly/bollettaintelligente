@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Quanto costa un kWh? | Bolletta Intelligente
+</title>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f5f7fa;
+    margin:0;
+    color:#0f172a;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:40px;
+}
+
+.article{
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(0,0,0,0.1);
+}
+
+h1{
+    color:#005bea;
+    margin-top:0;
+}
+
+h2{
+    margin-top:35px;
+    color:#374151;
+}
+
+p{
+    line-height:1.7;
+    margin-top:15px;
+}
+
+ul{
+    padding-left:25px;
+    line-height:1.8;
+}
+
+.prezzo-box{
+    margin:30px 0;
+    padding:25px;
+    background:#fff7ed;
+    border:2px solid #f97316;
+    border-radius:15px;
+    text-align:center;
+}
+
+.prezzo-box h3{
+    margin:0;
+    color:#374151;
+}
+
+.prezzo{
+    font-size:42px;
+    font-weight:bold;
+    color:#f97316;
+    margin:15px 0;
+}
+
+.info{
+    color:#64748b;
+}
+
+.cta-btn{
+    display:block;
+    width:100%;
+    max-width:420px;
+    margin:15px auto;
+    padding:15px;
+    background:#f97316;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.cta-btn:hover{
+    background:#ea580c;
+}
+
+.secondary-btn{
+    display:block;
+    width:100%;
+    max-width:420px;
+    margin:15px auto;
+    padding:15px;
+    background:#005bea;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.secondary-btn:hover{
+    background:#0047c7;
+}
+
+.home-btn{
+    display:block;
+    width:100%;
+    max-width:420px;
+    margin:15px auto;
+    padding:15px;
+    background:#0ea5e9;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.home-btn:hover{
+    background:#0284c7;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="article">
+
+<h1>
+Quanto costa un kWh?
+</h1>
+
+<p>
+Il prezzo dell'energia elettrica cambia nel tempo e dipende da diversi fattori.
+Questa guida ti aiuta a capire il costo di un kWh e il suo impatto sulla bolletta.
+</p>
+
+<div class="prezzo-box">
+
+<h3>
+Prezzo energia aggiornato
+</h3>
+
+<div id="prezzo" class="prezzo">
+Caricamento...
+</div>
+
+<div id="mese" class="info">
+</div>
+
+</div>
+
+<h2>
+Che cos'è un kWh?
+</h2>
+
+<p>
+Il kWh (kilowattora) è l'unità di misura utilizzata per indicare il consumo di energia elettrica.
+</p>
+
+<p>
+Un apparecchio da 1 kW utilizzato per un'ora consuma circa 1 kWh.
+</p>
+
+<h2>
+Perché il prezzo cambia?
+</h2>
+
+<ul>
+
+<li>Andamento del mercato elettrico</li>
+
+<li>Costo delle materie prime</li>
+
+<li>Domanda e offerta di energia</li>
+
+<li>Condizioni contrattuali del fornitore</li>
+
+<li>Oneri e tasse presenti in bolletta</li>
+
+</ul>
+
+<h2>
+Esempio pratico
+</h2>
+
+<p>
+Se consumi 200 kWh al mese e il prezzo dell'energia è pari a 0,12 €/kWh:
+</p>
+
+<p>
+<strong>
+200 × 0,12 = 24 €
+</strong>
+</p>
+
+<p>
+Questo valore rappresenta soltanto la materia energia e non l'intera bolletta.
+</p>
+
+<h2>
+Strumenti utili
+</h2>
+
+<p>
+Utilizza i nostri strumenti gratuiti per simulare i tuoi consumi energetici.
+</p>
+
+<button
+class="cta-btn"
+onclick="window.location.href='../calcolatori/analisi-bolletta.html'">
+
+📄 Analizza la tua bolletta
+
+</button>
+
+<button
+class="secondary-btn"
+onclick="window.location.href='../calcolatori/climatizzatore.html'">
+
+🔋 Consumo Climatizzatore
+
+</button>
+
+<button
+class="secondary-btn"
+onclick="window.location.href='../calcolatori/fotovoltaico.html'">
+
+☀️ Calcolatore Fotovoltaico
+
+</button>
+
+<button
+class="home-btn"
+onclick="window.location.href='../index.html'">
+
+🏠 Torna alla Homepage
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+fetch('../dati/prezzo-energia.json')
+
+.then(response => response.json())
+
+.then(data => {
+
+let prezzoKwh =
+(data.pun_euro_mwh / 1000)
+.toFixed(5)
+.replace('.',',');
+
+document.getElementById('prezzo')
+.innerHTML =
+prezzoKwh + ' €/kWh';
+
+document.getElementById('mese')
+.innerHTML =
+'Mese di riferimento: ' +
+data.mese;
+
+})
+
+.catch(error => {
+
+document.getElementById('prezzo')
+.innerHTML =
+'Dato non disponibile';
+
+});
+
+</script>
+
+</body>
+
+</html>
