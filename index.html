@@ -9,8 +9,9 @@
 
 .guide-grid{
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
+grid-template-columns:repeat(4,minmax(280px,1fr));
+gap:25px;
+justify-content:center;
 }
 
 @media(max-width:768px){
