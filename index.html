@@ -7,6 +7,20 @@
 
 <style>
 
+.guide-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+@media(max-width:768px){
+
+.guide-grid{
+grid-template-columns:1fr;
+}
+
+}
+
 *{
 margin:0;
 padding:0;
@@ -272,7 +286,7 @@ Calcola il costo medio effettivo della tua energia.
 
 <h2>Guide sul Risparmio Energetico</h2>
 
-<div class="griglia">
+<div class="guide-grid">
 
 <div class="card"
 onclick="location.href='guide/quanto-consuma-un-climatizzatore-12000-btu.html'">
